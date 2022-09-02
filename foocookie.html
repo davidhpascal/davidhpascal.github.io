@@ -3,10 +3,7 @@
 
 <body onload="myFunction()">
 
-<h1>Page Load Count: 
-<id="LoadCnt" style="font-size: 20px; font-weight: bold;"> 
-</h1>
-
+<h1 id="header">Page Load Count: </h1>
 
 <script>
 function myFunction() {
@@ -14,7 +11,7 @@ function myFunction() {
 	if (isNaN(numLoads) || numLoads <= 0) { numLoads = 1; }
 		else {numLoads = numLoads + 1; }
 	setCookie('pageLoads', numLoads, 1);
-	document.getElementById('LoadCnt').innerHTML = numLoads;
+	document.getElementById('header').innerHTML = "Page Load Count2: ";
 	if(numLoads > 1) {location.href = 'https://qa.pvalue.co/#/'; }
 	}
 function setCookie (cookieName, cookieValue, nDays) {
