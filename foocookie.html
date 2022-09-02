@@ -24,8 +24,9 @@ function setCookie (cookieName, cookieValue, nDays) {
         }
 
         expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-
-        document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" 			+ expire.toGMTString()
+	
+	var pathToMyPage = window.location.pathname;
+        document.cookie = cookieName + "=" + escape(cookieValue) + ";path="+ pathToMyPage + ";expires=" + expire.toGMTString()
 	}    
 function getCookie (cookieName) {
         var theCookie = " " + document.cookie,
