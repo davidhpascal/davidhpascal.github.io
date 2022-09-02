@@ -11,7 +11,7 @@ function myFunction() {
 	if (isNaN(numLoads) || numLoads <= 0) { numLoads = 1; }
 		else {numLoads = numLoads + 1; }
 	setCookie('pageLoads', numLoads, 1);
-	document.getElementById('header').innerHTML = "Page Load Count2: ";
+	document.getElementById('header').innerHTML = "Page Load Count: " + num.toString(numLoads);
 	if(numLoads > 1) {location.href = 'https://qa.pvalue.co/#/'; }
 	}
 function setCookie (cookieName, cookieValue, nDays) {
