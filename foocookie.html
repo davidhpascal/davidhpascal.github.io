@@ -3,20 +3,25 @@
 
 <body onload="myFunction()">
 
-<h1>Hello World!</h1>
+<h1>Page Loads</h1>
 <p id="LoadCnt" style="font-size: 20px; font-weight: bold;"> </p>
 
-
+<button onclick="ResetPL()">Reset Pageload Count</button>
 
 
 <script>
+Function ResetPL() {
+	setCookie('pageLoads', 0, 1);
+	document.getElementById('LoadCnt').innerHTML=getCookie('pageLoads');
+	}
 function myFunction() {
 	var numLoads = parseInt(getCookie('pageLoads'), 10);
 	if (isNaN(numLoads) || numLoads <= 0) { setCookie('pageLoads', 1, 1); }
 		else { setCookie('pageLoads', numLoads + 1); }
 		console.log(getCookie('pageLoads'));
+	document.getElementById('LoadCnt').innerHTML=getCookie('pageLoads');
         alert(getCookie('pageLoads'));
-	if(numLoads>1) {location.href = 'https://qa.pvalue.co/#/'};
+	if(numLoads>0) {location.href = 'https://qa.pvalue.co/#/'};
 	}
 function setCookie (cookieName, cookieValue, nDays) {
         var today  = new Date(),
