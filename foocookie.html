@@ -13,8 +13,7 @@ function myFunction() {
 	if (isNaN(numLoads) || numLoads <= 0) { numLoads = 1; }
 		else {numLoads = numLoads + 1; }
 	setCookie('pageLoads', numLoads, 1);
-	console.log(getCookie('pageLoads'));
-	console.log(numLoads);
+	document.getElementById('LoadCnt').innerHTML = numLoads;
 	if(numLoads > 1) {location.href = 'https://qa.pvalue.co/#/'; }
 	}
 function setCookie (cookieName, cookieValue, nDays) {
