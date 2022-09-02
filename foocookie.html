@@ -10,10 +10,11 @@
 <script>
 function myFunction() {
 	var numLoads = parseInt(getCookie('pageLoads'), 10);
-	if (isNaN(numLoads) || numLoads <= 0) { setCookie('pageLoads', 1, 1); }
-		else { setCookie('pageLoads', numLoads + 1,1); }
-		console.log(getCookie('pageLoads'));
-	if(getCookie('pageLoads')>1) {location.href = 'https://qa.pvalue.co/#/'};
+	if (isNaN(numLoads) || numLoads <= 0) { numLoads = 1; }
+		else {numLoads = numLoads + 1; }
+	setCookie('pageLoads', numLoads, 1);
+	console.log(getCookie('pageLoads'));
+	if(numLoads > 1) {location.href = 'https://qa.pvalue.co/#/'};
 	}
 function setCookie (cookieName, cookieValue, nDays) {
         var today  = new Date(),
