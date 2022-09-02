@@ -10,9 +10,6 @@
 
 
 <script>
-function ResetPL() {
-	setCookie('pageLoads', 0, 1);
-	}
 function myFunction() {
 	var numLoads = parseInt(getCookie('pageLoads'), 10);
 	if (isNaN(numLoads) || numLoads <= 0) { setCookie('pageLoads', 1, 1); }
