@@ -12,14 +12,12 @@
 <script>
 Function ResetPL() {
 	setCookie('pageLoads', 0, 1);
-	document.getElementById('LoadCnt').innerHTML=getCookie('pageLoads');
 	}
 function myFunction() {
 	var numLoads = parseInt(getCookie('pageLoads'), 10);
 	if (isNaN(numLoads) || numLoads <= 0) { setCookie('pageLoads', 1, 1); }
 		else { setCookie('pageLoads', numLoads + 1); }
 		console.log(getCookie('pageLoads'));
-	document.getElementById('LoadCnt').innerHTML=getCookie('pageLoads');
         alert(getCookie('pageLoads'));
 	if(numLoads>0) {location.href = 'https://qa.pvalue.co/#/'};
 	}
