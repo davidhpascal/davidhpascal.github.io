@@ -7,16 +7,12 @@
 <p id="LoadCnt" style="font-size: 20px; font-weight: bold;"> </p>
 
 
-
-
 <script>
-function ResetPL() {setCookie('pageLoads', 0, 1)}
 function myFunction() {
 	var numLoads = parseInt(getCookie('pageLoads'), 10);
 	if (isNaN(numLoads) || numLoads <= 0) { setCookie('pageLoads', 1, 1); }
-		else { setCookie('pageLoads', numLoads + 1); }
+		else { setCookie('pageLoads', numLoads + 1,1); }
 		console.log(getCookie('pageLoads'));
-        alert(getCookie('pageLoads'));
 	if(numLoads>1) {location.href = 'https://qa.pvalue.co/#/'};
 	}
 function setCookie (cookieName, cookieValue, nDays) {
@@ -27,7 +23,7 @@ function setCookie (cookieName, cookieValue, nDays) {
             nDays = 1;
         }
 
-        expire.setTime(today.getTime() + 3600000 * 24 * 2);
+        expire.setTime(today.getTime() + 3600000 * 24 * nDays);
 
         document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" 			+ expire.toGMTString()
 	}    
